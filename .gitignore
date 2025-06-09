@@ -1,0 +1,15 @@
+*.exe
+*.node_module
+*.log
+*.tmp
+*.cache
+*.bak
+*.swp
+*.pid
+*.DS_Store
+*.vscode
+*.idea
+*.env
+*.out
+*.zip
+*.tar.gz
