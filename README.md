@@ -1,2 +1,4 @@
 # bakery-site
-it's bakery website. enjoyable yummy tempting enticing delectable pleasant heavenly delightful luscious tasty
+An online bakery website built with the help of AI to streamline ordering, personalize recommendations, and enhance the customer experience.
+
+
