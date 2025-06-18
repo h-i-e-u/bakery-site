@@ -1,21 +1,44 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { Icon } from '@iconify/react';
-
+import { Icon } from '@iconify/react'
+import { useState } from 'react'
 
 const TopBar = () => {
   const navigate = useNavigate()
+  const [isMenuOpen, setIsMenuOpen] = useState(true)
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
 return (
     <header className="navbar bg-base-100 shadow-md">
         <div className="navbar-start lg:hidden">
             <div className="dropdown">
-                <label tabIndex={0} className="dropdown-default btn btn-primary btn-outline">
+                <button 
+                    onClick={toggleMenu}
+                    className="btn btn-primary btn-outline"
+                >
                     <Icon icon="mdi:menu" className="text-2xl" />
-                </label>
-                <ul tabIndex={0} className="menu menu-sm dropdown-menu mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li className='dropdown-item'><Link to="/">Home</Link></li>
-                    <li className='dropdown-item'><Link to="/shop">Shop</Link></li>
-                    <li className='dropdown-item'><Link to="/about">About</Link></li>
+                </button>
+                <ul className={`absolute menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-base-100 rounded-box w-52
+                    ${isMenuOpen ? 'block' : 'hidden'}`}
+                >
+                    <li>
+                    <Link to="/" className="flex items-center gap-2" onClick={toggleMenu}>
+                        <Icon icon="mdi:home" />
+                        Home
+                    </Link>
+                    </li>
+                    <li>
+                    <Link to="/shop" className="flex items-center gap-2" onClick={toggleMenu}>
+                        <Icon icon="mdi:store" />
+                        Shop
+                    </Link>
+                    </li>
+                    <li>
+                    <Link to="/about" className="flex items-center gap-2" onClick={toggleMenu}>
+                        <Icon icon="mdi:information" />
+                        About
+                    </Link>
+                    </li>
                 </ul>
             </div>
         </div>
