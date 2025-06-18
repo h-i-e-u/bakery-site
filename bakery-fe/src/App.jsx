@@ -14,10 +14,10 @@ import NotFound from './pages/customer/NotFound'
 // Admin Pages
 import AdminLogin from './pages/admin/Login'
 import Dashboard from './pages/admin/Dashboard'
-import Orders from './pages/admin/Orders'
-import Inventory from './pages/admin/Inventory'
-import Customers from './pages/admin/Customers'
-import Settings from './pages/admin/Settings'
+// import Orders from './pages/admin/Orders'
+// import Inventory from './pages/admin/Inventory'
+// import Customers from './pages/admin/Customers'
+// import Settings from './pages/admin/Settings'
 
 function App() {
   return (
@@ -37,10 +37,10 @@ function App() {
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<Dashboard />} />
-            <Route path="/admin/orders" element={<Orders />} />
+            {/* <Route path="/admin/orders" element={<Orders />} />
             <Route path="/admin/inventory" element={<Inventory />} />
             <Route path="/admin/customers" element={<Customers />} />
-            <Route path="/admin/settings" element={<Settings />} />
+            <Route path="/admin/settings" element={<Settings />} /> */}
             
             {/* 404 Route */}
             <Route path="*" element={<NotFound />} />
