@@ -1,0 +1,112 @@
+{
+  "categories": [
+    {
+      "id": "bread",
+      "name": "Artisan Breads",
+      "image": "/images/categories/breads.jpg",
+      "description": "Fresh baked artisanal breads"
+    },
+    {
+      "id": "pastries",
+      "name": "Pastries",
+      "image": "/images/categories/pastries.jpg",
+      "description": "Delicate and flaky pastries"
+    },
+    {
+      "id": "cakes",
+      "name": "Cakes",
+      "image": "/images/categories/cakes.jpg",
+      "description": "Custom and celebration cakes"
+    },
+    {
+      "id": "cookies",
+      "name": "Cookies",
+      "image": "/images/categories/cookies.jpg",
+      "description": "Fresh baked cookies"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Sourdough Bread",
+      "categoryId": "bread",
+      "price": 6.99,
+      "image": "/images/products/sourdough-bread.jpg",
+      "description": "Traditional sourdough bread made with our century-old starter.",
+      
+      "inStock": true,
+      "isPopular": true
+    },
+    {
+      "id": 2,
+      "name": "Chocolate Croissant",
+      "categoryId": "pastries",
+      "price": 3.99,
+      "image": "/images/products/chocolate-croissant.jpg",
+      "description": "Flaky butter croissant filled with rich dark chocolate.",
+     
+      "inStock": true,
+      "isPopular": true
+    },
+    {
+      "id": 3,
+      "name": "Red Velvet Cake",
+      "categoryId": "cakes",
+      "price": 28.99,
+      "image": "/images/products/red-velvet-cake.jpg",
+      "description": "Classic red velvet cake with cream cheese frosting.",
+     
+      "inStock": true,
+      "isPopular": false,
+      "customizable": true,
+      "sizes": ["6 inch", "8 inch", "10 inch"]
+    }
+  ],
+ 
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 2,
+          "price": 6.99
+        },
+        {
+          "productId": 2,
+          "quantity": 4,
+          "price": 3.99
+        }
+      ],
+      "total": 29.94,
+      "status": "completed",
+      "shippingAddress": {
+        "street": "123 Baker Street",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "10001"
+      },
+      "orderDate": "2023-12-15T10:30:00Z",
+      "deliveryDate": "2023-12-15T14:30:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "role": "admin",
+      "addresses": [
+        {
+          "id": 1,
+          "street": "123 Baker Street",
+          "city": "New York",
+          "state": "NY",
+          "zipCode": "10001",
+          "isDefault": true
+        }
+      ]
+    }
+  ]
+}
