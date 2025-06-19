@@ -13,7 +13,7 @@ const Slider = ({ slides }) => {
     }, 5000)
 
     return () => clearInterval(timer)
-  }, [currentIndex, ])
+  }, [slides.length])
 
   const handleNext = () => {
     if (isAnimating) return

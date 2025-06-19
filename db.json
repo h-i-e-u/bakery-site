@@ -62,7 +62,32 @@
       "sizes": ["6 inch", "8 inch", "10 inch"]
     }
   ],
- 
+ "items": [
+  {
+      "title": "Chocolate Croissant",
+      "price": 2.5,
+      "image": "https://picsum.photos/200/300?random=3",
+      "description": "A flaky croissant filled with rich chocolate."
+    },
+    {
+      "title": "Sourdough Bread",
+      "price": 3.0,
+      "image": "https://picsum.photos/200/300?random=4",
+      "description": "Our signature sourdough, baked fresh daily."
+    },
+    {
+      "title": "Vanilla Cupcake",
+      "price": 1.5,
+      "image": "https://picsum.photos/200/300?random=5",
+      "description": "A light and fluffy vanilla cupcake with buttercream frosting."
+    },
+    {
+      "title": "Apple Pie",
+      "price": 5.0,
+      "image": "https://picsum.photos/200/300?random=8",
+      "description": "Classic apple pie with a flaky crust and cinnamon-spiced apples."
+    }
+ ],
   "orders": [
     {
       "id": 1,
