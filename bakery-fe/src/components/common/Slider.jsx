@@ -9,10 +9,11 @@ const Slider = ({ slides }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext()
+      console.log('Auto sliding to next slide')
     }, 5000)
 
     return () => clearInterval(timer)
-  }, [currentIndex])
+  }, [currentIndex, ])
 
   const handleNext = () => {
     if (isAnimating) return

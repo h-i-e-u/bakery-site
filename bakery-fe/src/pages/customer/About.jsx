@@ -1,6 +1,43 @@
 import React from 'react'
+import { Icon } from '@iconify/react'
 
 const About = () => {
+  const chefs = [
+    {
+      name: 'John Baker',
+      role: 'Head Chef',
+      image: '/images/chefs/chef1.jpg',
+      description: 'With over 15 years of experience in artisanal baking.',
+      socials: {
+        instagram: '#',
+        twitter: '#',
+        facebook: '#'
+      }
+    },
+    {
+      name: 'Maria Garcia',
+      role: 'Pastry Chef',
+      image: '/images/chefs/chef2.jpg',
+      description: 'Specializes in creating exquisite French pastries.',
+      socials: {
+        instagram: '#',
+        twitter: '#',
+        facebook: '#'
+      }
+    },
+    {
+      name: 'David Chen',
+      role: 'Bread Specialist',
+      image: '/images/chefs/chef3.jpg',
+      description: 'Master of traditional and modern bread-making techniques.',
+      socials: {
+        instagram: '#',
+        twitter: '#',
+        facebook: '#'
+      }
+    }
+  ]
+
   return (
     <div className="container mx-auto px-4 py-8">
       <section className="text-center mb-12">
@@ -33,6 +70,42 @@ const About = () => {
           <p className="mb-4">123 Bakery Street</p>
           <p className="mb-4">Mon-Sat: 7am - 7pm</p>
           <p>Sunday: 8am - 3pm</p>
+        </div>
+      </section>
+
+      {/* Our Team Section */}
+      <section className="py-12">
+        <h2 className="text-4xl font-bold text-center mb-12 font-amaranth">Meet Our Team</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {chefs.map((chef, index) => (
+            <div key={index} className="card bg-base-100 shadow-xl">
+              <figure className="relative">
+                <img 
+                  src={chef.image} 
+                  alt={chef.name}
+                  className="w-full h-80 object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                  <h3 className="text-xl font-bold text-white">{chef.name}</h3>
+                  <p className="text-white/80">{chef.role}</p>
+                </div>
+              </figure>
+              <div className="card-body">
+                <p className="text-center mb-4">{chef.description}</p>
+                <div className="flex justify-center space-x-4">
+                  <a href={chef.socials.instagram} className="btn btn-circle btn-ghost">
+                    <Icon icon="mdi:instagram" className="text-xl" />
+                  </a>
+                  <a href={chef.socials.twitter} className="btn btn-circle btn-ghost">
+                    <Icon icon="mdi:twitter" className="text-xl" />
+                  </a>
+                  <a href={chef.socials.facebook} className="btn btn-circle btn-ghost">
+                    <Icon icon="mdi:facebook" className="text-xl" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
