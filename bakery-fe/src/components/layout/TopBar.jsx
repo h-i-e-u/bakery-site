@@ -9,7 +9,7 @@ const TopBar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
 return (
-    <header className="navbar bg-base-100 shadow-md">
+    <header className="navbar bg-base-100 shadow-md sticky top-0 z-10">
         <div className="navbar-start lg:hidden">
             <div className="dropdown">
                 <button 
