@@ -56,8 +56,7 @@ const Home = () => {
     fetchFeaturedItems();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  // if (error) return <div>Error: {error}</div>;
 
   return (
     <div className="min-h-screen">
@@ -67,7 +66,7 @@ const Home = () => {
           Featured Products
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
-          {featuredItems.map((item) => (
+          { !loading && featuredItems.map((item) => (
             <ItemCard
               key={item.id}
               title={item.title}
