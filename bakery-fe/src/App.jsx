@@ -19,6 +19,7 @@ import Orders from "./pages/admin/Orders";
 import Customers from "./pages/admin/Customers";
 import Settings from "./pages/admin/Settings";
 import ProtectedRoute from "./components/layout/ProtectedRoute";
+import AddProduct from "./pages/admin/AddProduct";
 
 function App() {
   return (
@@ -67,6 +68,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Settings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/add-product"
+              element={
+                <ProtectedRoute>
+                  <AddProduct />
                 </ProtectedRoute>
               }
             />

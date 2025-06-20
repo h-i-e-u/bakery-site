@@ -1,37 +1,44 @@
 {
   "items": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Banh Kem Socola",
       "price": 2.5,
       "image": "https://picsum.photos/200/300?random=3",
       "description": "A flaky croissant filled with rich chocolate."
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Sourdough Bread",
       "price": 3,
       "image": "https://picsum.photos/200/300?random=4",
       "description": "Our signature sourdough, baked fresh daily."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Vanilla Cupcake",
       "price": 1.5,
       "image": "https://picsum.photos/200/300?random=5",
       "description": "A light and fluffy vanilla cupcake with buttercream frosting."
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Apple Pie",
       "price": 5,
       "image": "https://picsum.photos/200/300?random=8",
       "description": "Classic apple pie with a flaky crust and cinnamon-spiced apples."
+    },
+    {
+      "id": "dad5",
+      "title": "banh kem nhan thanh long :))",
+      "price": 4,
+      "image": "https://picsum.photos/200",
+      "description": "ngon, ngon ..."
     }
   ],
   "orders": [
     {
-      "id": 1,
+      "id": "1",
       "customer_name": "Nguyễn Văn A",
       "email": "a@gmail.com",
       "address": "Q.1, TP.HCM",
@@ -106,11 +113,30 @@
         }
       ],
       "orderDate": "2025-06-20T12:08:15.465Z"
+    },
+    {
+      "id": "28e2",
+      "customer_name": "alice tyson",
+      "email": "alice@kk",
+      "address": "q2,lalaallal",
+      "phone": "113",
+      "notice": "more sugar please",
+      "total": 3,
+      "status": "completed",
+      "items": [
+        {
+          "product_id": 2,
+          "product_name": "Sourdough Bread",
+          "quantity": 1,
+          "price": 3
+        }
+      ],
+      "orderDate": "2025-06-20T12:08:15.465Z"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "john@example.com",
       "role": "admin",
