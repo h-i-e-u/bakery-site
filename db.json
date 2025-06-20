@@ -10,7 +10,7 @@
     {
       "id": 2,
       "title": "Sourdough Bread",
-      "price": 3.0,
+      "price": 3,
       "image": "https://picsum.photos/200/300?random=4",
       "description": "Our signature sourdough, baked fresh daily."
     },
@@ -24,7 +24,7 @@
     {
       "id": 4,
       "title": "Apple Pie",
-      "price": 5.0,
+      "price": 5,
       "image": "https://picsum.photos/200/300?random=8",
       "description": "Classic apple pie with a flaky crust and cinnamon-spiced apples."
     }
@@ -36,7 +36,7 @@
       "email": "a@gmail.com",
       "address": "Q.1, TP.HCM",
       "phone": "0912345678",
-      "created_at": "2025-06-01T10:23:45Z",
+      "notice": "Giao hàng nhanh",
       "total": 29.94,
       "status": "completed",
       "items": [
@@ -49,6 +49,63 @@
       ],
       "orderDate": "2023-12-15T10:30:00Z",
       "deliveryDate": "2023-12-15T14:30:00Z"
+    },
+    {
+      "id": "b834",
+      "customer_name": "mike tyson",
+      "email": "a@gmail.com",
+      "address": "q1, SG",
+      "phone": "0101010101",
+      "notice": "",
+      "total": 2.5,
+      "status": "pending",
+      "items": [
+        {
+          "product_id": 1,
+          "product_name": "Banh Kem Socola",
+          "quantity": 1,
+          "price": 2.5
+        }
+      ],
+      "orderDate": "2025-06-20T12:00:16.092Z"
+    },
+    {
+      "id": "cf0a",
+      "customer_name": "mike jdjjdjdjd",
+      "email": "kokok@gmail.com",
+      "address": "q12",
+      "phone": "00009",
+      "notice": "giao ngay",
+      "total": 2.5,
+      "status": "pending",
+      "items": [
+        {
+          "product_id": 1,
+          "product_name": "Banh Kem Socola",
+          "quantity": 1,
+          "price": 2.5
+        }
+      ],
+      "orderDate": "2025-06-20T12:06:04.631Z"
+    },
+    {
+      "id": "28e0",
+      "customer_name": "alice tyson",
+      "email": "alice@kk",
+      "address": "q2,lalaallal",
+      "phone": "113",
+      "notice": "",
+      "total": 3,
+      "status": "pending",
+      "items": [
+        {
+          "product_id": 2,
+          "product_name": "Sourdough Bread",
+          "quantity": 1,
+          "price": 3
+        }
+      ],
+      "orderDate": "2025-06-20T12:08:15.465Z"
     }
   ],
   "users": [

@@ -10,6 +10,7 @@ import Cart from './pages/customer/Cart'
 import Checkout from './pages/customer/Checkout'
 import About from './pages/customer/About'
 import NotFound from './pages/customer/NotFound'
+import ThankYou from './pages/customer/ThankYou'
 
 // Admin Pages
 import AdminLogin from './pages/admin/Login'
@@ -33,6 +34,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/about" element={<About />} />
+            <Route path="/thankyou" element={<ThankYou />} />
             
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminLogin />} />

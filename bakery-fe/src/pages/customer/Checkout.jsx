@@ -1,11 +1,66 @@
 import { useCart } from "../../context/CartContext";
+import { useState } from "react";
+import api from "../../api";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart();
   const subtotal = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+  const navigate = useNavigate();
+
+  // Shipping form state
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    address: "",
+    phone: "",
+    notice: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Handle input changes
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // Place order handler
+  const handlePlaceOrder = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      await api.post("/orders", {
+        customer_name: `${form.firstName} ${form.lastName}`,
+        email: form.email,
+        address: form.address,
+        phone: form.phone,
+        notice: form.notice,
+        total: subtotal,
+        status: "pending",
+        items: cart.map((item) => ({
+          product_id: item.id,
+          product_name: item.title,
+          quantity: item.quantity,
+          price: item.price,
+        })),
+        orderDate: new Date().toISOString(),
+      });
+      clearCart();
+      alert("Order placed successfully!");
+      navigate("/thankyou"); // Or show a success message/modal
+    } catch (err) {
+      alert("Failed to place order. Please try again.");
+      setError("Failed to place order. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -15,50 +70,71 @@ const Checkout = () => {
         <div className="lg:col-span-2">
           <div className="card bg-base-200 p-6 mb-6">
             <h2 className="text-2xl font-bold mb-4">Shipping Information</h2>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handlePlaceOrder}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
+                  name="firstName"
                   placeholder="First Name"
                   className="input input-bordered w-full"
+                  value={form.firstName}
+                  onChange={handleChange}
+                  required
                 />
                 <input
                   type="text"
+                  name="lastName"
                   placeholder="Last Name"
                   className="input input-bordered w-full"
+                  value={form.lastName}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
                 className="input input-bordered w-full"
+                value={form.email}
+                onChange={handleChange}
+                required
               />
               <input
                 type="text"
+                name="address"
                 placeholder="Address"
                 className="input input-bordered w-full"
+                value={form.address}
+                onChange={handleChange}
+                required
               />
               <input
                 type="text"
+                name="phone"
                 placeholder="Phone Number"
                 className="input input-bordered w-full"
+                value={form.phone}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="notice"
+                placeholder="Notice (optional)"
+                className="input input-bordered w-full"
+                value={form.notice}
+                onChange={handleChange}
               />
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <label className="flex items-center space-x-2 ml-1">
-                  <input
-                    type="checkbox"
-                    checked
-                    className="checkbox"
-                  />
-                  <span>Inner city</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Notice (optional)"
-                  className="input input-bordered w-full md:col-span-2"
-                />
-              </div>
+              <button
+                type="submit"
+                className="btn btn-primary w-full mt-6"
+                disabled={loading || cart.length === 0}
+              >
+                {loading ? "Placing Order..." : "Place Order"}
+              </button>
+              {error && <div className="text-red-500 mt-2">{error}</div>}
             </form>
           </div>
         </div>
@@ -87,7 +163,6 @@ const Checkout = () => {
             <span>Total</span>
             <span>${subtotal.toFixed(2)}</span>
           </div>
-          <button className="btn btn-primary w-full mt-6">Place Order</button>
         </div>
       </div>
     </div>
