@@ -28,24 +28,24 @@ const Dashboard = () => {
       <div className="flex-1 p-6 overflow-auto">
         <h1 className="text-3xl font-bold mb-6 font-amaranth">Dashboard</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="card bg-primary text-primary-content">
+          <div className="card border-4 border-secondary text-primary-content">
             <div className="card-body">
               <h2 className="card-title">Total Orders</h2>
-              <p className="text-3xl font-bold">{totalOrders}</p>
+              <p className="text-3xl font-bold text-accent">{totalOrders}</p>
             </div>
           </div>
-          <div className="card bg-secondary text-secondary-content">
+          <div className="card border-secondary border-4 text-primary-content">
             <div className="card-body">
               <h2 className="card-title">Revenue</h2>
-              <p className="text-3xl font-bold">
+              <p className="text-3xl font-bold text-accent">
                 ${totalRevenue.toLocaleString()}
               </p>
             </div>
           </div>
-          <div className="card bg-accent text-accent-content">
+          <div className="card border-secondary border-4 text-primary-content">
             <div className="card-body">
               <h2 className="card-title">Products</h2>
-              <p className="text-3xl font-bold">{totalProducts}</p>
+              <p className="text-3xl font-bold text-accent">{totalProducts}</p>
             </div>
           </div>
         </div>
