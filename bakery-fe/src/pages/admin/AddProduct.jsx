@@ -10,6 +10,7 @@ const AddProduct = () => {
     price: "",
     image: "",
     description: "",
+    type: "bread", // default type
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -41,7 +42,7 @@ const AddProduct = () => {
         price: parseFloat(form.price),
       });
       alert("Product added!");
-      setForm({ title: "", price: "", image: "", description: "" });
+      setForm({ title: "", price: "", image: "", description: "", type: "bread" });
       fetchItems();
       navigate("/admin/dashboard");
     } catch (err) {
@@ -77,6 +78,7 @@ const AddProduct = () => {
                 <h3 className="font-bold text-sm">{item.title}</h3>
                 <p className="text-primary font-bold text-sm">${item.price}</p>
                 <p className="text-xs">{item.description}</p>
+                <p className="text-xs italic text-gray-500">{item.type}</p>
               </div>
             ))}
           </div>
@@ -94,6 +96,17 @@ const AddProduct = () => {
               onChange={handleChange}
               required
             />
+            <select
+              name="type"
+              className="select select-bordered w-full"
+              value={form.type}
+              onChange={handleChange}
+              required
+            >
+              <option value="bread">Bread</option>
+              <option value="pastries">Pastries</option>
+              <option value="cake">Cake</option>
+            </select>
             <input
               type="number"
               name="price"

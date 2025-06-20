@@ -3,7 +3,6 @@ import api from "../../api";
 import LeftBar from "../../components/layout/LeftBar";
 
 const Dashboard = () => {
-  const [data, setData] = useState({});
   const [orders, setOrders] = useState([]);
   const [products, setProducts] = useState([]);
 
@@ -27,7 +26,7 @@ const Dashboard = () => {
       <LeftBar />        
       <div className="flex-1 p-6 overflow-auto">
         <h1 className="text-3xl font-bold mb-6 font-amaranth">Dashboard</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <div className="card border-4 border-secondary text-primary-content">
             <div className="card-body">
               <h2 className="card-title">Total Orders</h2>

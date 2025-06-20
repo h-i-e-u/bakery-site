@@ -5,35 +5,40 @@
       "title": "Banh Kem Socola",
       "price": 2.5,
       "image": "https://picsum.photos/200/300?random=3",
-      "description": "A flaky croissant filled with rich chocolate."
+      "description": "A flaky croissant filled with rich chocolate.",
+      "type": "pastries"
     },
     {
       "id": "2",
       "title": "Sourdough Bread",
       "price": 3,
       "image": "https://picsum.photos/200/300?random=4",
-      "description": "Our signature sourdough, baked fresh daily."
+      "description": "Our signature sourdough, baked fresh daily.",
+      "type": "bread"
     },
     {
       "id": "3",
       "title": "Vanilla Cupcake",
       "price": 1.5,
       "image": "https://picsum.photos/200/300?random=5",
-      "description": "A light and fluffy vanilla cupcake with buttercream frosting."
+      "description": "A light and fluffy vanilla cupcake with buttercream frosting.",
+      "type": "cupcakes"
     },
     {
       "id": "4",
       "title": "Apple Pie",
       "price": 5,
       "image": "https://picsum.photos/200/300?random=8",
-      "description": "Classic apple pie with a flaky crust and cinnamon-spiced apples."
+      "description": "Classic apple pie with a flaky crust and cinnamon-spiced apples.",
+      "type": "pies"
     },
     {
       "id": "dad5",
       "title": "banh kem nhan thanh long :))",
       "price": 4,
       "image": "https://picsum.photos/200",
-      "description": "ngon, ngon ..."
+      "description": "ngon, ngon ...",
+      "type": "pastries"
     }
   ],
   "orders": [
