@@ -1,24 +1,24 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import TopBar from './components/layout/TopBar'
-import Footer from './components/layout/Footer'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import TopBar from "./components/layout/TopBar";
+import Footer from "./components/layout/Footer";
 
 // Customer Pages
-import Home from './pages/customer/Home'
-import Shop from './pages/customer/Shop'
-import Product from './pages/customer/Product'
-import Cart from './pages/customer/Cart'
-import Checkout from './pages/customer/Checkout'
-import About from './pages/customer/About'
-import NotFound from './pages/customer/NotFound'
-import ThankYou from './pages/customer/ThankYou'
+import Home from "./pages/customer/Home";
+import Shop from "./pages/customer/Shop";
+import Product from "./pages/customer/Product";
+import Cart from "./pages/customer/Cart";
+import Checkout from "./pages/customer/Checkout";
+import About from "./pages/customer/About";
+import NotFound from "./pages/customer/NotFound";
+import ThankYou from "./pages/customer/ThankYou";
 
 // Admin Pages
-import AdminLogin from './pages/admin/Login'
-import Dashboard from './pages/admin/Dashboard'
-// import Orders from './pages/admin/Orders'
-// import Inventory from './pages/admin/Inventory'
-// import Customers from './pages/admin/Customers'
-// import Settings from './pages/admin/Settings'
+import AdminLogin from "./pages/admin/Login";
+import Dashboard from "./pages/admin/Dashboard";
+import Orders from "./pages/admin/Orders";
+import Customers from "./pages/admin/Customers";
+import Settings from "./pages/admin/Settings";
+import ProtectedRoute from "./components/layout/ProtectedRoute";
 
 function App() {
   return (
@@ -35,15 +35,42 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/about" element={<About />} />
             <Route path="/thankyou" element={<ThankYou />} />
-            
+
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminLogin />} />
-            <Route path="/admin/dashboard" element={<Dashboard />} />
-            {/* <Route path="/admin/orders" element={<Orders />} />
-            <Route path="/admin/inventory" element={<Inventory />} />
-            <Route path="/admin/customers" element={<Customers />} />
-            <Route path="/admin/settings" element={<Settings />} /> */}
-            
+            <Route
+              path="/admin/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/orders"
+              element={
+                <ProtectedRoute>
+                  <Orders />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/customers"
+              element={
+                <ProtectedRoute>
+                  <Customers />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/settings"
+              element={
+                <ProtectedRoute>
+                  <Settings />
+                </ProtectedRoute>
+              }
+            />
+
             {/* 404 Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
@@ -51,7 +78,7 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
