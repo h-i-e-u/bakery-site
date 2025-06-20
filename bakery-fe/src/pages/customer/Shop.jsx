@@ -1,10 +1,14 @@
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import ItemCard from "../../components/common/ItemCard"
 import api from "../../api"
 
 const Shop = () => {
-  
+  const [featuredItems, setFeaturedItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchFeaturedItems = async () => {
       try {
         const response = await api.get("/items", {
@@ -16,7 +20,6 @@ const Shop = () => {
         setLoading(false);
       } catch (err) {
         console.error("Error fetching featured items:", err);
-        setError(err.message);
         setLoading(false);
       }
     };
@@ -36,16 +39,20 @@ const Shop = () => {
           <option>Cakes</option>
         </select>
         
-        <input type="text" placeholder="Search products" className="input input-bordered w-full max-w-xs" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* ItemCard components will go here */}
-        <ItemCard
-          title="Fresh Baguette"
-          image="https://via.placeholder.com/150"
-          price={2.99}
-        />
+        { !loading && featuredItems.map((item) => (
+          <ItemCard
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            image={item.image}
+            price={item.price}
+            onClick={() => navigate(`/product/${item.id}`)}
+          />
+        ))}
       </div>
     </div>
   )

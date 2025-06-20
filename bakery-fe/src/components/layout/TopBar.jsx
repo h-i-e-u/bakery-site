@@ -1,10 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
+import { useCart } from "../../context/CartContext"; // <-- import your cart context
 
 const TopBar = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { cart } = useCart(); // <-- get cart from context
+
+  // Calculate total quantity
+  const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -71,10 +76,10 @@ const TopBar = () => {
       </div>
 
       <div className="navbar-end ml-auto flex items-center justify-end gap-4">
-        {/* Search Button */}
-        <button className="btn btn-ghost btn-circle">
+        {/* Search Button implement later */}
+        {/* <button className="btn btn-ghost btn-circle">
           <Icon icon="mdi:magnify" className="h-5 w-5" />
-        </button>
+        </button> */}
 
         {/* Cart Button */}
         <button
@@ -83,7 +88,9 @@ const TopBar = () => {
         >
           <div className="indicator">
             <Icon icon="mdi:cart-outline" className="h-5 w-5" />
-            <span className="badge badge-sm indicator-item">0</span>
+            <span className="badge badge-sm indicator-item">
+              {cartCount}
+            </span>
           </div>
         </button>
       </div>

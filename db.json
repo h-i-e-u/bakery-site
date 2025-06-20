@@ -25,68 +25,36 @@
       "description": "Fresh baked cookies"
     }
   ],
-  "products": [
-    {
-      "id": 1,
-      "name": "Sourdough Bread",
-      "categoryId": "bread",
-      "price": 6.99,
-      "image": "/images/products/sourdough-bread.jpg",
-      "description": "Traditional sourdough bread made with our century-old starter.",
-      
-      "inStock": true,
-      "isPopular": true
-    },
-    {
-      "id": 2,
-      "name": "Chocolate Croissant",
-      "categoryId": "pastries",
-      "price": 3.99,
-      "image": "/images/products/chocolate-croissant.jpg",
-      "description": "Flaky butter croissant filled with rich dark chocolate.",
-     
-      "inStock": true,
-      "isPopular": true
-    },
-    {
-      "id": 3,
-      "name": "Red Velvet Cake",
-      "categoryId": "cakes",
-      "price": 28.99,
-      "image": "/images/products/red-velvet-cake.jpg",
-      "description": "Classic red velvet cake with cream cheese frosting.",
-     
-      "inStock": true,
-      "isPopular": false,
-      "customizable": true,
-      "sizes": ["6 inch", "8 inch", "10 inch"]
-    }
-  ],
+
  "items": [
   {
-      "title": "Chocolate Croissant",
-      "price": 2.5,
-      "image": "https://picsum.photos/200/300?random=3",
-      "description": "A flaky croissant filled with rich chocolate."
-    },
-    {
-      "title": "Sourdough Bread",
-      "price": 3.0,
-      "image": "https://picsum.photos/200/300?random=4",
-      "description": "Our signature sourdough, baked fresh daily."
-    },
-    {
-      "title": "Vanilla Cupcake",
-      "price": 1.5,
-      "image": "https://picsum.photos/200/300?random=5",
-      "description": "A light and fluffy vanilla cupcake with buttercream frosting."
-    },
-    {
-      "title": "Apple Pie",
-      "price": 5.0,
-      "image": "https://picsum.photos/200/300?random=8",
-      "description": "Classic apple pie with a flaky crust and cinnamon-spiced apples."
-    }
+    "id": 1,
+    "title": "Chocolate Croissant",
+    "price": 2.5,
+    "image": "https://picsum.photos/200/300?random=3",
+    "description": "A flaky croissant filled with rich chocolate."
+  },
+  {
+    "id": 2,
+    "title": "Sourdough Bread",
+    "price": 3.0,
+    "image": "https://picsum.photos/200/300?random=4",
+    "description": "Our signature sourdough, baked fresh daily."
+  },
+  {
+    "id": 3,
+    "title": "Vanilla Cupcake",
+    "price": 1.5,
+    "image": "https://picsum.photos/200/300?random=5",
+    "description": "A light and fluffy vanilla cupcake with buttercream frosting."
+  },
+  {
+    "id": 4,
+    "title": "Apple Pie",
+    "price": 5.0,
+    "image": "https://picsum.photos/200/300?random=8",
+    "description": "Classic apple pie with a flaky crust and cinnamon-spiced apples."
+  }
  ],
   "orders": [
     {

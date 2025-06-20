@@ -69,6 +69,7 @@ const Home = () => {
           { !loading && featuredItems.map((item) => (
             <ItemCard
               key={item.id}
+              id={item.id}
               title={item.title}
               image={item.image}
               price={item.price}

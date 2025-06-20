@@ -1,19 +1,32 @@
-import React from 'react'
+import { useCart } from "../../context/CartContext";
 
-const ItemCard = ({ title, price, image, description }) => {
+const ItemCard = ({ id, title, image, price, onClick }) => {
+  const { addToCart } = useCart();
+
   return (
     <div className="card bg-base-100 shadow-xl">
-      <figure><img src={image} alt={title} className="h-48 w-full object-cover" /></figure>
+      <figure>
+        <img
+          src={image}
+          alt={title}
+          className="h-48 w-full object-cover cursor-pointer"
+          onClick={onClick}
+        />
+      </figure>
       <div className="card-body">
-        <h2 className="card-title font-amaranth">{title}</h2>
-        <p className="line-clamp-2">{description}</p>
+        <h2 className="card-title">{title}</h2>
         <p className="text-xl font-bold">${price}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Add to Cart</button>
+          <button
+            className="btn btn-primary"
+            onClick={() => addToCart({ id, title, image, price })}
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ItemCard
+export default ItemCard;
