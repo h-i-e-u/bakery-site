@@ -1,10 +1,10 @@
 import { Navigate } from "react-router-dom";
 
-// Dummy auth check (replace with real logic)
+// Dummy auth check
 const isAdmin = () => {
   // For demo: check localStorage or context for admin login
   return true;
-//   localStorage.getItem("isAdmin") === "true"
+  //   localStorage.getItem("isAdmin") === "true"
 };
 
 const ProtectedRoute = ({ children }) => {
