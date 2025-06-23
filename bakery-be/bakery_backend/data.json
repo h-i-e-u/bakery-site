@@ -1,0 +1,113 @@
+[
+  {
+    "model": "api.item",
+    "pk": 1,
+    "fields": {
+      "title": "Banh Kem Socola",
+      "price": 2.5,
+      "image": "https://picsum.photos/200/300?random=3",
+      "description": "A flaky croissant filled with rich chocolate.",
+      "type": "pastries"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 2,
+    "fields": {
+      "title": "Sourdough Bread",
+      "price": 3,
+      "image": "https://picsum.photos/200/300?random=4",
+      "description": "Our signature sourdough, baked fresh daily.",
+      "type": "bread"
+    }
+  }
+    ,
+    {
+        "model": "api.item",
+        "pk": 3,
+        "fields": {
+        "title": "Fruit Tart",
+        "price": 4.5,
+        "image": "https://picsum.photos/200/300?random=5",
+        "description": "A delightful tart topped with seasonal fruits.",
+        "type": "tarts"
+        }
+    },
+    {
+        "model": "api.item",
+        "pk": 4,
+        "fields": {
+        "title": "Chocolate Croissant",
+        "price": 2.5,
+        "image": "https://picsum.photos/200/300?random=6",
+        "description": "A flaky croissant filled with rich chocolate.",
+        "type": "pastries"
+        }
+    },
+    {
+        "model": "api.item",
+        "pk": 5,
+        "fields": {
+        "title": "Apple Pie",
+        "price": 3.5,
+        "image": "https://picsum.photos/200/300?random=7",
+        "description": "A classic apple pie with a flaky crust.",
+        "type": "tarts"
+        }
+    },
+    {
+        "model": "api.item",
+        "pk": 6,
+        "fields": {
+        "title": "Baguette",
+        "price": 2,
+        "image": "https://picsum.photos/200/300?random=8",
+        "description": "A traditional French baguette, perfect for sandwiches.",
+        "type": "bread"
+        }
+    },
+    {
+        "model": "api.item",
+        "pk": 7,
+        "fields": {
+        "title": "Cheese Danish",
+        "price": 2.5,
+        "image": "https://picsum.photos/200/300?random=9",
+        "description": "A sweet Danish pastry filled with cream cheese.",
+        "type": "pastries"
+        }
+    },
+    {
+        "model": "api.item",
+        "pk": 8,
+        "fields": {
+        "title": "Blueberry Muffin",
+        "price": 2.5,
+        "image": "https://picsum.photos/200/300?random=10",
+        "description": "A moist muffin bursting with fresh blueberries.",
+        "type": "pastries"
+        }
+    },
+    {
+        "model": "api.item",
+        "pk": 9,
+        "fields": {
+        "title": "Cinnamon Roll",
+        "price": 3,
+        "image": "https://picsum.photos/200/300?random=11",
+        "description": "A soft roll with cinnamon and icing.",
+        "type": "pastries"
+        }
+    },
+    {
+        "model": "api.item",
+        "pk": 10,
+        "fields": {
+        "title": "Raisin Bread",
+        "price": 3,
+        "image": "https://picsum.photos/200/300?random=12",
+        "description": "A sweet bread filled with raisins.",
+        "type": "bread"
+        }
+    }
+]
