@@ -35,7 +35,7 @@ const Checkout = () => {
     setError(null);
 
     try {
-      await api.post("/orders", {
+      await api.post("/orders/", {
         customer_name: `${form.firstName} ${form.lastName}`,
         email: form.email,
         address: form.address,
@@ -45,7 +45,6 @@ const Checkout = () => {
         status: "pending",
         items: cart.map((item) => ({
           product_id: item.id,
-          product_name: item.title,
           quantity: item.quantity,
           price: item.price,
         })),
