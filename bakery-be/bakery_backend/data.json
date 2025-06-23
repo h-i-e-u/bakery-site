@@ -109,5 +109,54 @@
         "description": "A sweet bread filled with raisins.",
         "type": "bread"
         }
+    },
+  {
+    "model": "api.order",
+    "pk": 1,
+    "fields": {
+      "customer_name": "Nguyen Van A",
+      "email": "a@gmail.com",
+      "address": "123 Main St",
+      "phone": "0912345678",
+      "notice": "Please deliver before noon.",
+      "total": 10.5,
+      "status": "pending",
+      "orderDate": "2025-06-20T12:00:16.092Z"
     }
+  },
+  {
+    "model": "api.orderitem",
+    "pk": 1,
+    "fields": {
+      "order": 1,
+      "product": 1,
+      "quantity": 2,
+      "price": 2.5
+    }
+  },
+  {
+    "model": "api.orderitem",
+    "pk": 2,
+    "fields": {
+      "order": 1,
+      "product": 2,
+      "quantity": 1,
+      "price": 3
+    }
+  }
+  ,
+  {
+    "model": "api.order",
+    "pk": 2,
+    "fields": {
+      "customer_name": "Nguyen Van B",
+      "email": "",
+      "address": "456 Elm St",
+      "phone": "0987654321",
+      "notice": "Leave at the front door.",
+      "total": 7.5,
+      "status": "completed",
+      "orderDate": "2025-06-21T12:00:16.092Z"
+    }
+  }
 ]
