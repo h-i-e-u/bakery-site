@@ -13,6 +13,16 @@ const TopBar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  // check if admin is logged in
+  const isAdmin = !!localStorage.getItem("access");
+  // Logout handler
+  const handleLogout = () => {
+    localStorage.removeItem("access");
+    localStorage.removeItem("refresh");
+    localStorage.removeItem("isAdmin");
+    navigate("/admin");
+  };
+
   return (
     <header className="navbar bg-base-100 shadow-md sticky top-0 z-10">
       <div className="navbar-start lg:hidden">
@@ -82,17 +92,29 @@ const TopBar = () => {
         </button> */}
 
         {/* Cart Button */}
-        <button
-          className="btn btn-ghost btn-circle"
-          onClick={() => navigate("/cart")}
-        >
-          <div className="indicator">
-            <Icon icon="mdi:cart-outline" className="h-5 w-5" />
-            <span className="badge badge-sm indicator-item">
-              {cartCount}
-            </span>
+        {!isAdmin && (
+          <button
+            className="btn btn-ghost btn-circle"
+            onClick={() => navigate("/cart")}
+          >
+            <div className="indicator">
+              <Icon icon="mdi:cart-outline" className="h-5 w-5" />
+              <span className="badge badge-sm indicator-item">{cartCount}</span>
+            </div>
+          </button>
+        )}
+        {/* Admin Login / Logout */}
+        {isAdmin && (
+          <div className="tooltip tooltip-bottom" data-tip="Logout">
+            <button
+              className="btn btn-ghost btn-circle hover:bg-error hover:text-white transition-colors"
+              onClick={handleLogout}
+              aria-label="Logout"
+            >
+              <Icon icon="mdi:logout" className="text-2xl" />
+            </button>
           </div>
-        </button>
+        )}
       </div>
     </header>
   );

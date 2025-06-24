@@ -1,4 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+
+class AdUser(AbstractUser):
+    # 
+    
+    pass
 
 class Item(models.Model):
     TYPE_CHOICES = [

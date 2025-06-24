@@ -27,5 +27,21 @@ dist-ssr
 *.env
 venv
 .env.development.local
+venv/
+.env/
+.venv/
+env/
 
 __pycache__
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.env.local
+.env.*.local
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+pip-log.txt
+pip-delete-this-directory.txt

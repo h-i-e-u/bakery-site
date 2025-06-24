@@ -1,10 +1,10 @@
 import { Navigate } from "react-router-dom";
 
-// Dummy auth check
+//  auth check
 const isAdmin = () => {
-  // For demo: check localStorage or context for admin login
-  return true;
-  //   localStorage.getItem("isAdmin") === "true"
+  // Check for JWT token in localStorage
+  const token = localStorage.getItem("access");
+  return !!token;
 };
 
 const ProtectedRoute = ({ children }) => {

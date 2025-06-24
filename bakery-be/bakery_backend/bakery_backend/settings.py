@@ -73,6 +73,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bakery_backend.wsgi.application'
 
+# Custom User Model
+AUTH_USER_MODEL = 'api.AdUser'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -125,3 +127,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}

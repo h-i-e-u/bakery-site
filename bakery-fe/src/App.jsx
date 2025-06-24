@@ -18,8 +18,8 @@ import Dashboard from "./pages/admin/Dashboard";
 import Orders from "./pages/admin/Orders";
 import Customers from "./pages/admin/Customers";
 import Settings from "./pages/admin/Settings";
-import ProtectedRoute from "./components/layout/ProtectedRoute";
 import AddProduct from "./pages/admin/AddProduct";
+import ProtectedRoute from "./components/layout/ProtectedRoute";
 
 function App() {
   return (
