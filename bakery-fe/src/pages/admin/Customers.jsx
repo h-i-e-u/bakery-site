@@ -7,7 +7,7 @@ const Customers = () => {
 
   useEffect(() => {
     api.get("/orders").then((res) => {
-      const orders = res.data || res;
+      const orders = res.data.results || res;
       const uniqueMap = new Map();
       orders.forEach((order) => {
         const key = (order.customer_name || "") + "|" + (order.email || "");

@@ -8,8 +8,8 @@ const Dashboard = () => {
 
   // Fetch data from API or context here
   useEffect(() => {
-    api.get("/orders").then((res) => setOrders(res.data));
-    api.get("/items").then((res) => setProducts(res.data));
+    api.get("/orders").then((res) => setOrders(res.data.results || res.data)); // 
+    api.get("/items").then((res) => setProducts(res.data.results || res.data)); //  
   }, []);
 
   const totalOrders = orders.length;

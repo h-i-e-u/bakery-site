@@ -41,10 +41,10 @@ const Home = () => {
       try {
         const response = await api.get("/items", {
           params: {
-            _limit: 4, // Limit to 4 items
+            limit: 4, // Limit to 4 items
           },
         });
-        setFeaturedItems(response.data);
+        setFeaturedItems(response.data.results || response.data); 
         setLoading(false);
       } catch (err) {
         console.error("Error fetching featured items:", err);

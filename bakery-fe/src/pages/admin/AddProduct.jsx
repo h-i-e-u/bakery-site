@@ -24,7 +24,7 @@ const AddProduct = () => {
   const fetchItems = async () => {
     try {
       const res = await api.get("/items");
-      setItems(res.data);
+      setItems(res.data.results || res.data);
     } catch (err) {}
   };
 

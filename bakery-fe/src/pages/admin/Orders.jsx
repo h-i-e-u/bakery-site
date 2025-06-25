@@ -5,7 +5,7 @@ import LeftBar from "../../components/layout/LeftBar";
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    api.get("/orders").then(res => setOrders(res.data));
+    api.get("/orders").then(res => setOrders(res.data.results || res.data)); // Fetch orders from API
   }, []);
   return (
     <div className="flex min-h-screen">

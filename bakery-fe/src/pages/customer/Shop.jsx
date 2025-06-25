@@ -12,11 +12,11 @@ const Shop = () => {
     const fetchFeaturedItems = async () => {
       try {
         const response = await api.get("/items", {
-          params: {
-            _limit: 4, // Limit to 4 items
-          },
+          // params: {
+          //   limit: 9, // Limit to 10
+          // },
         });
-        setFeaturedItems(response.data);
+        setFeaturedItems(response.data.results || response.data);
         setLoading(false);
       } catch (err) {
         console.error("Error fetching featured items:", err);
