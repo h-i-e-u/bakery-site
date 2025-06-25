@@ -37,21 +37,65 @@ const AddProduct = () => {
     setLoading(true);
     setError(null);
     try {
-      await api.post("/items", {
-        ...form,
-        price: parseFloat(form.price),
+      if (form.id) {
+        // Update existing product
+        await api.put(`/items/${form.id}/`, {
+          title: form.title,
+          price: parseFloat(form.price),
+          image: form.image,
+          description: form.description,
+          type: form.type,
+        });
+        alert("Product updated!");
+      } else {
+        // Add new product
+        await api.post("/items/", {
+          title: form.title,
+          price: parseFloat(form.price),
+          image: form.image,
+          description: form.description,
+          type: form.type,
+        });
+        alert("Product added!");
+      }
+      setForm({
+        title: "",
+        price: "",
+        image: "",
+        description: "",
+        type: "bread",
+        id: undefined,
       });
-      alert("Product added!");
-      setForm({ title: "", price: "", image: "", description: "", type: "bread" });
       fetchItems();
       navigate("/admin/dashboard");
     } catch (err) {
-      setError("Failed to add product.");
+      setError("Failed to save product.");
     } finally {
       setLoading(false);
     }
   };
 
+  // handle delete item
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure you want to delete this product?")) {
+      try {
+        await api.delete(`/items/${id}/`);
+        fetchItems();
+      } catch (err) {
+        alert("Failed to delete product.");
+      }
+    }
+  };
+  const handleEdit = (item) => {
+    setForm({
+      title: item.title,
+      price: item.price,
+      image: item.image,
+      description: item.description,
+      type: item.type,
+      id: item.id,
+    });
+  };
   return (
     <div className="flex min-h-screen">
       <LeftBar />
@@ -79,13 +123,47 @@ const AddProduct = () => {
                 <p className="text-primary font-bold text-sm">${item.price}</p>
                 <p className="text-xs">{item.description}</p>
                 <p className="text-xs italic text-gray-500">{item.type}</p>
+                <div className="flex gap-2 mt-2">
+                  <button
+                    className="btn btn-xs btn-error"
+                    onClick={() => handleDelete(item.id)}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className="btn btn-xs btn-warning"
+                    onClick={() => handleEdit(item)}
+                  >
+                    Edit
+                  </button>
+                </div>
               </div>
             ))}
           </div>
         </div>
         {/* Add product form on the right */}
         <div className="flex-1">
-          <h1 className="text-3xl font-bold mb-6 font-amaranth">Add Product</h1>
+          <h1 className="text-3xl font-bold mb-6 font-amaranth">
+            {form.id ? "Edit Product" : "Add Product"}
+          </h1>
+          {form.id && (
+            <button
+              type="button"
+              className="btn btn-secondary mb-2"
+              onClick={() =>
+                setForm({
+                  title: "",
+                  price: "",
+                  image: "",
+                  description: "",
+                  type: "bread",
+                  id: undefined,
+                })
+              }
+            >
+              Back to Add Product
+            </button>
+          )}
           <form className="max-w-lg space-y-4" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -140,7 +218,13 @@ const AddProduct = () => {
               className="btn btn-primary w-full"
               disabled={loading}
             >
-              {loading ? "Adding..." : "Add Product"}
+              {loading
+                ? form.id
+                  ? "Updating..."
+                  : "Adding..."
+                : form.id
+                ? "Update Product"
+                : "Add Product"}
             </button>
             {error && <div className="text-red-500">{error}</div>}
           </form>
