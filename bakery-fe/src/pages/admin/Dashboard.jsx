@@ -13,7 +13,7 @@ const Dashboard = () => {
   }, []);
 
   const totalOrders = orders.length;
-  const totalRevenue = orders.reduce((sum, o) => sum + (o.total || 0), 0);
+  const totalRevenue = orders.reduce((sum, o) => sum + Number(o.total || 0), 0);
   const totalProducts = products.length;
 
   // recentOrders is the last 5 orders sorted by orderDate
