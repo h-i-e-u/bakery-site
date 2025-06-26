@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import api from "../../api"
+import { useTranslation } from "react-i18next"
 
 const Product = () => {
   const { id } = useParams()
@@ -8,6 +9,7 @@ const Product = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [quantity, setQuantity] = useState(1)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -47,7 +49,7 @@ const Product = () => {
               onChange={e => setQuantity(Number(e.target.value))}
               className="input input-bordered w-20"
             />
-            <button className="btn btn-primary">Add to Cart</button>
+            <button className="btn btn-primary">{t("Add to Cart")}</button>
           </div>
         </div>
       </div>

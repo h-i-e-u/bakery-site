@@ -1,7 +1,9 @@
 import { useCart } from "../../context/CartContext";
+import { useTranslation } from "react-i18next";
 
 const ItemCard = ({ id, title, image, price, onClick }) => {
   const { addToCart } = useCart();
+  const { t } = useTranslation();
 
   return (
     <div className="card bg-base-100 shadow-xl">
@@ -21,7 +23,7 @@ const ItemCard = ({ id, title, image, price, onClick }) => {
             className="btn btn-primary"
             onClick={() => addToCart({ id, title, image, price })}
           >
-            Add to Cart
+            {t("Add to Cart")}
           </button>
         </div>
       </div>

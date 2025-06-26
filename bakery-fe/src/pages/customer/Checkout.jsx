@@ -2,9 +2,12 @@ import { useCart } from "../../context/CartContext";
 import { useState } from "react";
 import api from "../../api";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Checkout = () => {
   const { cart, clearCart } = useCart();
+  const { t } = useTranslation();
+
   const subtotal = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -63,12 +66,11 @@ const Checkout = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8 font-amaranth">Checkout</h1>
-
+      <h1 className="text-4xl font-bold mb-8 font-amaranth">{t("Checkout")}</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
           <div className="card bg-base-200 p-6 mb-6">
-            <h2 className="text-2xl font-bold mb-4">Shipping Information</h2>
+            <h2 className="text-2xl font-bold mb-4">{t("Shipping Information")}</h2>
             <form className="space-y-4" onSubmit={handlePlaceOrder}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
@@ -131,7 +133,7 @@ const Checkout = () => {
                 className="btn btn-primary w-full mt-6"
                 disabled={loading || cart.length === 0}
               >
-                {loading ? "Placing Order..." : "Place Order"}
+                {loading ? t("Placing Order...")  : t("Place Order")}
               </button>
               {error && <div className="text-red-500 mt-2">{error}</div>}
             </form>
@@ -139,7 +141,7 @@ const Checkout = () => {
         </div>
 
         <div className="card bg-base-200 p-6 h-fit">
-          <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
+          <h2 className="text-2xl font-bold mb-4">{t("Order Summary")} </h2>
           <ul className="mb-4">
             {cart.map((item) => (
               <li key={item.id} className="flex justify-between mb-2">
@@ -151,15 +153,15 @@ const Checkout = () => {
             ))}
           </ul>
           <div className="flex justify-between mb-2">
-            <span>Subtotal</span>
+            <span>{t("Subtotal")}</span>
             <span>${subtotal.toFixed(2)}</span>
           </div>
           <div className="flex justify-between mb-4">
-            <span>Shipping</span>
+            <span>{t("Shipping")}</span>
             <span>$0.00</span>
           </div>
           <div className="flex justify-between font-bold mb-6">
-            <span>Total</span>
+            <span>{t("Total")}</span>
             <span>${subtotal.toFixed(2)}</span>
           </div>
         </div>

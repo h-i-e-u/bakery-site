@@ -2,11 +2,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { useCart } from "../../context/CartContext"; // <-- import your cart context
+import { useTranslation } from "react-i18next"; // <-- import useTranslation for i18n support
 
 const TopBar = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { cart } = useCart(); // <-- get cart from context
+  const { i18n } = useTranslation();
+
+  const handleLanguageChange = () => {
+    i18n.changeLanguage(i18n.language === "vi" ? "en" : "vi"); // Toggle between English and French
+  };
 
   // Calculate total quantity
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -90,6 +96,15 @@ const TopBar = () => {
         {/* <button className="btn btn-ghost btn-circle">
           <Icon icon="mdi:magnify" className="h-5 w-5" />
         </button> */}
+
+        {/* Language Toggle */}
+        <button
+          className="btn btn-ghost btn-circle"
+          onClick={handleLanguageChange}
+          aria-label="Toggle Language"
+        >
+          <Icon icon="mdi:translate" className="h-5 w-5" />
+        </button>
 
         {/* Cart Button */}
         {!isAdmin && (
