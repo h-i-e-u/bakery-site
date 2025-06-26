@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import api from "../../api"
 import { useTranslation } from "react-i18next"
+import { formatVND } from "../../utils"
 
 const Product = () => {
   const { id } = useParams()
@@ -38,7 +39,7 @@ const Product = () => {
         
         <div className="product-info">
           <h1 className="text-4xl font-bold mb-4 font-amaranth">{product.title}</h1>
-          <p className="text-2xl font-bold text-primary mb-4">${product.price}</p>
+          <p className="text-2xl font-bold text-primary mb-4">{formatVND(product.price)}</p>
           <p className="mb-6">{product.description}</p>
           
           <div className="flex gap-4 items-center mb-6">

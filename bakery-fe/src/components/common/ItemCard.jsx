@@ -1,5 +1,6 @@
 import { useCart } from "../../context/CartContext";
 import { useTranslation } from "react-i18next";
+import { formatVND } from "../../utils";
 
 const ItemCard = ({ id, title, image, price, onClick }) => {
   const { addToCart } = useCart();
@@ -17,7 +18,7 @@ const ItemCard = ({ id, title, image, price, onClick }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
-        <p className="text-xl font-bold">${price}</p>
+        <p className="text-xl font-bold">{formatVND(price)}</p>
         <div className="card-actions justify-end">
           <button
             className="btn btn-primary"

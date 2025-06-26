@@ -3,8 +3,10 @@ import api from "../../api";
 import LeftBar from "../../components/layout/LeftBar";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { formatVND } from "../../utils";
 
 const AddProduct = () => {
+  const [imageType, setImageType] = useState("file");
   const [form, setForm] = useState({
     title: "",
     price: "",
@@ -37,24 +39,24 @@ const AddProduct = () => {
     setLoading(true);
     setError(null);
     try {
+      const formData = new FormData();
+      formData.append("title", form.title);
+      formData.append("price", form.price);
+      formData.append("description", form.description);
+      formData.append("type", form.type);
+      if (imageType === "file" && form.image instanceof File) {
+        formData.append("image", form.image);
+      } else if (imageType === "url" && typeof form.image === "string") {
+        formData.append("image_url", form.image); // Use a custom field for URL
+      }
       if (form.id) {
-        // Update existing product
-        await api.put(`/items/${form.id}/`, {
-          title: form.title,
-          price: parseFloat(form.price),
-          image: form.image,
-          description: form.description,
-          type: form.type,
+        await api.put(`/items/${form.id}/`, formData, {
+          headers: { "Content-Type": "multipart/form-data" },
         });
         alert("Product updated!");
       } else {
-        // Add new product
-        await api.post("/items/", {
-          title: form.title,
-          price: parseFloat(form.price),
-          image: form.image,
-          description: form.description,
-          type: form.type,
+        await api.post("/items/", formData, {
+          headers: { "Content-Type": "multipart/form-data" },
         });
         alert("Product added!");
       }
@@ -67,7 +69,6 @@ const AddProduct = () => {
         id: undefined,
       });
       fetchItems();
-      navigate("/admin/dashboard");
     } catch (err) {
       setError("Failed to save product.");
     } finally {
@@ -120,7 +121,7 @@ const AddProduct = () => {
                   className="h-20 w-full object-cover rounded mb-2"
                 />
                 <h3 className="font-bold text-sm">{item.title}</h3>
-                <p className="text-primary font-bold text-sm">${item.price}</p>
+                <p className="text-primary font-bold text-sm">{formatVND(item.price)}</p>
                 <p className="text-xs">{item.description}</p>
                 <p className="text-xs italic text-gray-500">{item.type}</p>
                 <div className="flex gap-2 mt-2">
@@ -196,15 +197,46 @@ const AddProduct = () => {
               min="0"
               step="0.01"
             />
-            <input
-              type="text"
-              name="image"
-              placeholder="Image URL"
-              className="input input-bordered w-full"
-              value={form.image}
-              onChange={handleChange}
-              required
-            />
+            <div className="flex gap-4 mb-2">
+              <label>
+                <input
+                  type="radio"
+                  name="imageType"
+                  value="file"
+                  checked={imageType === "file"}
+                  onChange={() => setImageType("file")}
+                />{" "}
+                Upload Image
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="imageType"
+                  value="url"
+                  checked={imageType === "url"}
+                  onChange={() => setImageType("url")}
+                />{" "}
+                Image URL
+              </label>
+            </div>
+            {imageType === "file" ? (
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+                className="input input-bordered w-full"
+                onChange={(e) => setForm({ ...form, image: e.target.files[0] })}
+              />
+            ) : (
+              <input
+                type="text"
+                name="image"
+                placeholder="Image URL"
+                className="input input-bordered w-full"
+                value={typeof form.image === "string" ? form.image : ""}
+                onChange={handleChange}
+              />
+            )}
             <textarea
               name="description"
               placeholder="Description"

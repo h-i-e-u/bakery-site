@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../api";
 import LeftBar from "../../components/layout/LeftBar";
+import { formatVND } from "../../utils";
 
 const Orders = () => {
   const [selectedOrder, setSelectedOrder] = useState(null);
@@ -73,7 +74,7 @@ const Orders = () => {
                         : "Mark Completed"}
                     </button>
                   </td>
-                  <td>${order.total}</td>
+                  <td>{formatVND(order.total)}</td>
                   <td>{order.orderDate?.slice(0, 10)}</td>
                   <td>
                     <button
@@ -118,7 +119,7 @@ const Orders = () => {
                   <b>Notice:</b> {selectedOrder.notice}
                 </p>
                 <p>
-                  <b>Total:</b> ${selectedOrder.total}
+                  <b>Total:</b> {formatVND(selectedOrder.total)}
                 </p>
                 <p>
                   <b>Date:</b> {selectedOrder.orderDate?.slice(0, 10)}
@@ -131,7 +132,7 @@ const Orders = () => {
                       {selectedOrder.items.map((item, idx) => (
                         <li key={idx}>
                           {item.product ? item.product.title : "Product"} x{" "}
-                          {item.quantity} (${item.price})
+                          {item.quantity} ({formatVND(item.price)})
                         </li>
                       ))}
                     </ul>

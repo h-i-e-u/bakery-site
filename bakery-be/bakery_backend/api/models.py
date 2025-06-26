@@ -14,7 +14,8 @@ class Item(models.Model):
     ]
     title = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    image = models.URLField()
+    image = models.ImageField(upload_to='items/', blank=True, null=True)
+    image_url = models.URLField(blank=True, null=True)
     description = models.TextField()
     type = models.CharField(max_length=20, choices=TYPE_CHOICES)
 

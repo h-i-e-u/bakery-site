@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../../api";
 import LeftBar from "../../components/layout/LeftBar";
+import { formatVND } from "../../utils";
 
 const Dashboard = () => {
   const [orders, setOrders] = useState([]);
@@ -37,7 +38,7 @@ const Dashboard = () => {
             <div className="card-body">
               <h2 className="card-title">Revenue</h2>
               <p className="text-3xl font-bold text-accent">
-                ${totalRevenue.toLocaleString()}
+                {formatVND(totalRevenue.toLocaleString())}
               </p>
             </div>
           </div>
@@ -69,7 +70,7 @@ const Dashboard = () => {
                       <td>{order.id}</td>
                       <td>{order.customer_name}</td>
                       <td>{order.status}</td>
-                      <td>${order.total}</td>
+                      <td>{formatVND(order.total)}</td>
                       <td>{order.orderDate?.slice(0, 10)}</td>
                     </tr>
                   ))}
