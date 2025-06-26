@@ -15,7 +15,7 @@ const Home = () => {
 
   const slides = [
     {
-      image: "https://picsum.photos/200/300",
+      image: "/home.jpg",
       title: t("Welcome to Our Bakery!"),
       description:
         t("Discover our delicious range of baked , from fresh bread to artisanal pastries."),
@@ -23,7 +23,7 @@ const Home = () => {
       buttonLink: () => navigate("/shop"),
     },
     {
-      image: "https://picsum.photos/200/300?random=1",
+      image: "/home2.jpg",
       title: t("Custom Cakes"),
       description:
         t("Order a custom cake for your special occasion. We create beautiful and delicious cakes tailored to your needs."),
@@ -31,7 +31,7 @@ const Home = () => {
       buttonLink: () => navigate("/shop"),
     },
     {
-      image: "https://picsum.photos/200/300?random=2",
+      image: "/home3.jpg",
       title: t("Fresh Bread"),
       description:
         t("Enjoy our freshly baked bread, made daily with the finest ingredients."),

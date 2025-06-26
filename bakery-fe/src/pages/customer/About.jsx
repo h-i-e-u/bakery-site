@@ -6,7 +6,7 @@ const About = () => {
     {
       name: 'John Baker',
       role: 'Head Chef',
-      image: '/public/man.png',
+      image: '/man.png',
       description: 'With over 15 years of experience in artisanal baking.',
       socials: {
         instagram: '#',
@@ -17,7 +17,7 @@ const About = () => {
     {
       name: 'Maria Garcia',
       role: 'Pastry Chef',
-      image: '/public/man.png',
+      image: '/man.png',
       description: 'Specializes in creating exquisite French pastries.',
       socials: {
         instagram: '#',
@@ -28,7 +28,7 @@ const About = () => {
     {
       name: 'David Chen',
       role: 'Bread Specialist',
-      image: '/public/man.png',
+      image: '/man.png',
       description: 'Master of traditional and modern bread-making techniques.',
       socials: {
         instagram: '#',
