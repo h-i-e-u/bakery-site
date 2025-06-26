@@ -46,11 +46,11 @@ const AddProduct = () => {
       formData.append("type", form.type);
       if (imageType === "file" && form.image instanceof File) {
         formData.append("image", form.image);
-      } else if (imageType === "url" && typeof form.image === "string") {
+      }  else if (imageType === "url" && typeof form.image === "string") {
         formData.append("image_url", form.image); // Use a custom field for URL
       }
       if (form.id) {
-        await api.put(`/items/${form.id}/`, formData, {
+        await api.patchForm(`/items/${form.id}/`, formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         alert("Product updated!");
@@ -121,7 +121,9 @@ const AddProduct = () => {
                   className="h-20 w-full object-cover rounded mb-2"
                 />
                 <h3 className="font-bold text-sm">{item.title}</h3>
-                <p className="text-primary font-bold text-sm">{formatVND(item.price)}</p>
+                <p className="text-primary font-bold text-sm">
+                  {formatVND(item.price)}
+                </p>
                 <p className="text-xs">{item.description}</p>
                 <p className="text-xs italic text-gray-500">{item.type}</p>
                 <div className="flex gap-2 mt-2">

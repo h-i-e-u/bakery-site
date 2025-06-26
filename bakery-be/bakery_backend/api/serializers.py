@@ -5,7 +5,7 @@ class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = '__all__'
-        
+
     def get_image_display(self, obj):
         request = self.context.get('request')
         if obj.image:
@@ -18,9 +18,15 @@ class ItemSerializer(serializers.ModelSerializer):
         return None
 
     def validate(self, data):
-        # Ensure at least one image source is provided
-        if not data.get('image') and not data.get('image_url'):
-            raise serializers.ValidationError("Either image or image_url must be provided.")
+        if self.instance:
+            # On update, allow keeping existing image/image_url
+            if not data.get('image') and not data.get('image_url'):
+                if not self.instance.image and not self.instance.image_url:
+                    raise serializers.ValidationError("Either image or image_url must be provided.")
+        else:
+            # On create, require at least one
+            if not data.get('image') and not data.get('image_url'):
+                raise serializers.ValidationError("Either image or image_url must be provided.")
         return data
 
 class OrderItemSerializer(serializers.ModelSerializer):
