@@ -3,163 +3,156 @@
     "model": "api.item",
     "pk": 1,
     "fields": {
-      "title": "Banh Kem Socola",
-      "price": 2.5,
-      "image": "https://picsum.photos/200/300?random=3",
-      "description": "A flaky croissant filled with rich chocolate.",
-      "type": "pastries"
+      "title": "Bánh Kem Socola",
+      "price": 200000,
+      "image": "items/banh-kem-socola.jpg",
+      "description": "Bánh kem socola thơm ngon, ngọt ngào.",
+      "type": "cakes"
     }
   },
   {
     "model": "api.item",
     "pk": 2,
     "fields": {
-      "title": "Sourdough Bread",
-      "price": 3,
-      "image": "https://picsum.photos/200/300?random=4",
-      "description": "Our signature sourdough, baked fresh daily.",
+      "title": "Bánh Mì Kem Chocolate",
+      "price": 50000,
+    "image": "items/banh-mi-kem-chocolate.jpg",
+      "description": "Bánh mì kem chocolate thơm ngon, giòn rụm.",
       "type": "bread"
     }
-  }
-    ,
-    {
-        "model": "api.item",
-        "pk": 3,
-        "fields": {
-        "title": "Fruit Tart",
-        "price": 4.5,
-        "image": "https://picsum.photos/200/300?random=5",
-        "description": "A delightful tart topped with seasonal fruits.",
-        "type": "tarts"
-        }
-    },
-    {
-        "model": "api.item",
-        "pk": 4,
-        "fields": {
-        "title": "Chocolate Croissant",
-        "price": 2.5,
-        "image": "https://picsum.photos/200/300?random=6",
-        "description": "A flaky croissant filled with rich chocolate.",
-        "type": "pastries"
-        }
-    },
-    {
-        "model": "api.item",
-        "pk": 5,
-        "fields": {
-        "title": "Apple Pie",
-        "price": 3.5,
-        "image": "https://picsum.photos/200/300?random=7",
-        "description": "A classic apple pie with a flaky crust.",
-        "type": "tarts"
-        }
-    },
-    {
-        "model": "api.item",
-        "pk": 6,
-        "fields": {
-        "title": "Baguette",
-        "price": 2,
-        "image": "https://picsum.photos/200/300?random=8",
-        "description": "A traditional French baguette, perfect for sandwiches.",
-        "type": "bread"
-        }
-    },
-    {
-        "model": "api.item",
-        "pk": 7,
-        "fields": {
-        "title": "Cheese Danish",
-        "price": 2.5,
-        "image": "https://picsum.photos/200/300?random=9",
-        "description": "A sweet Danish pastry filled with cream cheese.",
-        "type": "pastries"
-        }
-    },
-    {
-        "model": "api.item",
-        "pk": 8,
-        "fields": {
-        "title": "Blueberry Muffin",
-        "price": 2.5,
-        "image": "https://picsum.photos/200/300?random=10",
-        "description": "A moist muffin bursting with fresh blueberries.",
-        "type": "pastries"
-        }
-    },
-    {
-        "model": "api.item",
-        "pk": 9,
-        "fields": {
-        "title": "Cinnamon Roll",
-        "price": 3,
-        "image": "https://picsum.photos/200/300?random=11",
-        "description": "A soft roll with cinnamon and icing.",
-        "type": "pastries"
-        }
-    },
-    {
-        "model": "api.item",
-        "pk": 10,
-        "fields": {
-        "title": "Raisin Bread",
-        "price": 3,
-        "image": "https://picsum.photos/200/300?random=12",
-        "description": "A sweet bread filled with raisins.",
-        "type": "bread"
-        }
-    },
+  },
   {
-    "model": "api.order",
-    "pk": 1,
+    "model": "api.item",
+    "pk": 3,
     "fields": {
-      "customer_name": "Nguyen Van A",
-      "email": "a@gmail.com",
-      "address": "123 Main St",
-      "phone": "0912345678",
-      "notice": "Please deliver before noon.",
-      "total": 10.5,
-      "status": "pending",
-      "orderDate": "2025-06-20T12:00:16.092Z"
+      "title": "Bánh Mì Chà Bông Xốt Bơ",
+      "price": 45000,
+      "image": "items/banh-mi-cha-bong-sot-bo.jpg",
+      "description": "Bánh mì chà bông xốt bơ béo ngậy, thơm ngon.",
+      "type": "bread"
     }
   },
   {
-    "model": "api.orderitem",
-    "pk": 1,
+    "model": "api.item",
+    "pk": 4,
     "fields": {
-      "order": 1,
-      "product": 1,
-      "quantity": 2,
-      "price": 2.5
+      "title": "Bánh Mì Bơ Tỏi",
+      "price": 35000,
+      "image": "items/banh-mi-bo-toi.jpg",
+      "description": "Bánh mì bơ tỏi giòn rụm, thơm lừng.",
+      "type": "bread"
+    }
+  },
+ {
+    "model": "api.item",
+    "pk": 5,
+    "fields": {
+      "title": "Bánh Mì Nho Dừa",
+      "price": 45000,
+      "image": "items/banh-mi-nho-dua.jpg",
+      "description": "Bánh mì nho dừa ngọt ngào, thơm mát.",
+      "type": "bread"
+    }
+  },
+ {
+    "model": "api.item",
+    "pk": 6,
+    "fields": {
+      "title": "Tiramisu Mâm Xôi",
+      "price": 600000,
+      "image": "items/tiramisu-mam-xoi.jpg",
+      "description": "Bánh kem Tiramisu mâm xôi ngọt ngào, béo ngậy.",
+      "type": "cakes"
     }
   },
   {
-    "model": "api.orderitem",
-    "pk": 2,
+    "model": "api.item",
+    "pk": 7,
     "fields": {
-      "order": 1,
-      "product": 2,
-      "quantity": 1,
-      "price": 3
+      "title": "Bánh Kem Hình Ốp la",
+      "price": 400000,
+      "image": "items/op-la-i-18cm.jpg",
+      "description": "Bánh kem hình ốp la độc đáo, ngộ nghĩnh.",
+      "type": "cakes"
     }
-  }
-  ,
+  },
   {
-    "model": "api.order",
-    "pk": 2,
+    "model": "api.item",
+    "pk": 8,
     "fields": {
-      "customer_name": "Nguyen Van B",
-      "email": "",
-      "address": "456 Elm St",
-      "phone": "0987654321",
-      "notice": "Leave at the front door.",
-      "total": 7.5,
-      "status": "completed",
-      "orderDate": "2025-06-21T12:00:16.092Z"
+      "title": "Bánh Kem Bắp Dâu",
+      "price": 400000,
+      "image": "items/banh-bap-dau.jpg",
+      "description": "Bánh kem bắp dâu thơm ngon, ngọt ngào.",
+      "type": "cakes"
     }
-  }
-  ,
+  },
+  {
+    "model": "api.item",
+    "pk": 9,
+    "fields": {
+      "title": "Con mèo",
+      "price": 999999,
+      "image": "items/cat.jpg",
+      "description": "Mèo huh huh",
+      "type": "misc"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 10,
+    "fields": {
+      "title": "Bánh Tart Trứng",
+      "price": 50000,
+      "image": "items/egg-tart.jpg",
+      "description": "Bánh tart trứng thơm ngon, béo ngậy.",
+      "type": "pastries"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 11,
+    "fields": {
+      "title": "Bánh Croissant",
+      "price": 40000,
+      "image": "items/croissant.jpg",
+      "description": "Bánh croissant giòn rụm, thơm ngon.",
+      "type": "pastries"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 12,
+    "fields": {
+      "title": "Dao Cắt Bánh",
+      "price": 15000,
+      "image": "items/knife.jpg",
+      "description": "Dao cắt bánh sắc bén, tiện lợi.",
+      "type": "misc"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 13,
+    "fields": {
+      "title": "Nón sinh nhật",
+      "price": 40000,
+      "image": "items/hat.jpg",
+      "description": "Nón sinh nhật vui nhộn, độc đáo.",
+      "type": "misc"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 14,
+    "fields": {
+      "title": "Nến Pháo Hoa",
+      "price": 40000,
+      "image": "items/nen.jpg",
+      "description": "Nến pháo hoa lung linh, rực rỡ.",
+      "type": "misc"
+    }
+  },
   { 
     "model": "api.aduser",
     "pk": 1,
