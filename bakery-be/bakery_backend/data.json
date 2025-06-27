@@ -1,0 +1,165 @@
+[
+  {
+    "model": "api.item",
+    "pk": 1,
+    "fields": {
+      "title": "Bánh Kem Socola",
+      "price": 200000,
+      "image": "items/banh-kem-socola.jpg",
+      "description": "Bánh kem socola thơm ngon, ngọt ngào.",
+      "type": "cakes"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 2,
+    "fields": {
+      "title": "Bánh Mì Kem Chocolate",
+      "price": 50000,
+    "image": "items/banh-mi-kem-chocolate.jpg",
+      "description": "Bánh mì kem chocolate thơm ngon, giòn rụm.",
+      "type": "bread"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 3,
+    "fields": {
+      "title": "Bánh Mì Chà Bông Xốt Bơ",
+      "price": 45000,
+      "image": "items/banh-mi-cha-bong-sot-bo.jpg",
+      "description": "Bánh mì chà bông xốt bơ béo ngậy, thơm ngon.",
+      "type": "bread"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 4,
+    "fields": {
+      "title": "Bánh Mì Bơ Tỏi",
+      "price": 35000,
+      "image": "items/banh-mi-bo-toi.jpg",
+      "description": "Bánh mì bơ tỏi giòn rụm, thơm lừng.",
+      "type": "bread"
+    }
+  },
+ {
+    "model": "api.item",
+    "pk": 5,
+    "fields": {
+      "title": "Bánh Mì Nho Dừa",
+      "price": 45000,
+      "image": "items/banh-mi-nho-dua.jpg",
+      "description": "Bánh mì nho dừa ngọt ngào, thơm mát.",
+      "type": "bread"
+    }
+  },
+ {
+    "model": "api.item",
+    "pk": 6,
+    "fields": {
+      "title": "Tiramisu Mâm Xôi",
+      "price": 600000,
+      "image": "items/tiramisu-mam-xoi.jpg",
+      "description": "Bánh kem Tiramisu mâm xôi ngọt ngào, béo ngậy.",
+      "type": "cakes"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 7,
+    "fields": {
+      "title": "Bánh Kem Hình Ốp la",
+      "price": 400000,
+      "image": "items/op-la-i-18cm.jpg",
+      "description": "Bánh kem hình ốp la độc đáo, ngộ nghĩnh.",
+      "type": "cakes"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 8,
+    "fields": {
+      "title": "Bánh Kem Bắp Dâu",
+      "price": 400000,
+      "image": "items/banh-bap-dau.jpg",
+      "description": "Bánh kem bắp dâu thơm ngon, ngọt ngào.",
+      "type": "cakes"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 9,
+    "fields": {
+      "title": "Con mèo",
+      "price": 999999,
+      "image": "items/cat.jpg",
+      "description": "Mèo huh huh",
+      "type": "misc"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 10,
+    "fields": {
+      "title": "Bánh Tart Trứng",
+      "price": 50000,
+      "image": "items/egg-tart.jpg",
+      "description": "Bánh tart trứng thơm ngon, béo ngậy.",
+      "type": "pastries"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 11,
+    "fields": {
+      "title": "Bánh Croissant",
+      "price": 40000,
+      "image": "items/croissant.jpg",
+      "description": "Bánh croissant giòn rụm, thơm ngon.",
+      "type": "pastries"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 12,
+    "fields": {
+      "title": "Dao Cắt Bánh",
+      "price": 15000,
+      "image": "items/knife.jpg",
+      "description": "Dao cắt bánh sắc bén, tiện lợi.",
+      "type": "misc"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 13,
+    "fields": {
+      "title": "Nón sinh nhật",
+      "price": 40000,
+      "image": "items/hat.jpg",
+      "description": "Nón sinh nhật vui nhộn, độc đáo.",
+      "type": "misc"
+    }
+  },
+  {
+    "model": "api.item",
+    "pk": 14,
+    "fields": {
+      "title": "Nến Pháo Hoa",
+      "price": 40000,
+      "image": "items/nen.jpg",
+      "description": "Nến pháo hoa lung linh, rực rỡ.",
+      "type": "misc"
+    }
+  },
+  { 
+    "model": "api.aduser",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "password": "pbkdf2_sha256$1000000$jCUma3CnN9yK6wFr4ZM2yh$c6pJ1HfStyjj5pdlAIws5vaJYZyZEWJ2znKd91aqTLE=",
+      "email": "ad@gmail.com"
+  }
+}
+]
