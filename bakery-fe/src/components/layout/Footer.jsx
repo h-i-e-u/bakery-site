@@ -1,6 +1,10 @@
 import { Icon } from '@iconify/react';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
   return (
     <footer className="footer p-10 bg-base-200 text-base-content">
       <div>
@@ -9,21 +13,21 @@ const Footer = () => {
       </div> 
       
       <div>
-        <span className="footer-title">Quick Links</span> 
-        <a className="link link-hover">Home</a> 
-        <a className="link link-hover">Shop</a> 
-        <a className="link link-hover">About</a>
+        <span className="footer-title">{t("Quick Links")}</span> 
+        <a className="link link-hover" onClick={() => navigate("/")}>Home</a> 
+        <a className="link link-hover" onClick={() => navigate("/shop")}>Shop</a> 
+        <a className="link link-hover" onClick={() => navigate("/about")}>About</a>
       </div> 
       
       <div>
-        <span className="footer-title">Contact</span> 
-        <p>123 Bakery Street</p>
-        <p>contact@banananannana.com</p>
-        <p>(555) 123-4567</p>
+        <span className="footer-title">{t("Contact")}</span> 
+        <p>70 đường Tô Ký, phường Tân Chánh Hiệp, Quận 12</p>
+        <p>email@email.com</p>
+        <p>(000) 111-1234</p>
       </div> 
       
       <div>
-        <span className="footer-title">Social</span> 
+        <span className="footer-title">{t("Social")}</span> 
         <div className="grid grid-flow-col gap-4">
           <a href="#" target="_blank" rel="noopener noreferrer">
             <Icon icon="mdi:twitter" width="24" height="24" />

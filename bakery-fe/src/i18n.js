@@ -42,6 +42,9 @@ const resources = {
         "We're passionate about creating delicious baked goods using traditional recipes and the finest ingredients. Every day, our master bakers craft fresh breads, pastries, and cakes for our community.": "Chúng tôi đam mê tạo ra các món bánh ngon bằng cách sử dụng công thức truyền thống và nguyên liệu tốt nhất. Mỗi ngày, các thợ làm bánh của chúng tôi chế biến bánh mì, bánh ngọt và bánh kem tươi cho cộng đồng của chúng tôi.",
         "Visit Us": "Thăm Chúng Tôi",
         "Meet Our Team": "Đội Ngũ Của Chúng Tôi",
+        "Quick Links": "Liên kết nhanh",
+        "Contact": "Liên hệ",
+        "Social": "Mạng xã hội",
         // ...add more translations here
     },
   },

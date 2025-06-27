@@ -68,13 +68,28 @@ const About = () => {
       </section>
 
       <section className="text-center">
-        <h2 className="text-3xl font-bold mb-6 font-amaranth">{t("Visit Us")}</h2>
+        <h2 className="text-3xl font-bold mb-6 font-amaranth">
+          {t("Visit Us")}
+        </h2>
         <div className="max-w-md mx-auto">
-          <p className="mb-4">70 đường Tô Ký, phường Tân Chánh Hiệp, Quận 12</p>
+          <span className="mb-4 inline-flex items-center gap-2">
+            <Icon icon="mdi:google-maps" />70 đường Tô Ký, phường Tân Chánh Hiệp, Quận 12
+          </span>
           <p className="mb-4">Mon-Sat: 7am - 7pm</p>
           <p>Sunday: 8am - 3pm</p>
         </div>
       </section>
+      <div className="m-12">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1497.901004870359!2d106.61834505248578!3d10.865170258237539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b2a11844fb9%3A0xbed3d5f0a6d6e0fe!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBHaWFvIFRow7RuZyBW4bqtbiBU4bqjaSBUaMOgbmggUGjhu5EgSOG7kyBDaMOtIE1pbmggKFVUSCkgLSBDxqEgc-G7nyAz!5e0!3m2!1svi!2s!4v1750995197534!5m2!1svi!2s"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
 
       {/* Our Team Section */}
       <section className="py-12">
