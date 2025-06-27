@@ -1,6 +1,7 @@
 import { useCart } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { formatVND } from "../../utils";
 
 const Cart = () => {
   const { cart, removeFromCart, clearCart } = useCart();
@@ -25,7 +26,7 @@ const Cart = () => {
                   <div className="flex-1">
                     <h3 className="font-bold">{item.title}</h3>
                     <p>{t("Quantity")}: {item.quantity}</p>
-                    <p>${item.price} {t("each")}</p>
+                    <p>{formatVND(item.price)} {t("each")}</p>
                   </div>
                   <button
                     className="btn btn-sm btn-error"
@@ -48,15 +49,15 @@ const Cart = () => {
           <h2 className="text-2xl font-bold mb-4">{t("Order Summary")}</h2>
           <div className="flex justify-between mb-2">
             <span>{t("Subtotal")}</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>{formatVND(subtotal)}</span>
           </div>
           <div className="flex justify-between mb-4">
             <span>{t("Shipping")}</span>
-            <span>$0.00</span>
+            <span>{formatVND(0.00)}</span>
           </div>
           <div className="flex justify-between font-bold mb-6">
             <span>{t("Total")}</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>{formatVND(subtotal)}</span>
           </div>
           <button
             className="btn btn-primary w-full"

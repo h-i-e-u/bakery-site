@@ -3,6 +3,7 @@ import { useState } from "react";
 import api from "../../api";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { formatVND } from "../../utils";
 
 const Checkout = () => {
   const { cart, clearCart } = useCart();
@@ -148,21 +149,21 @@ const Checkout = () => {
                 <span>
                   {item.title} x {item.quantity}
                 </span>
-                <span>${(item.price * item.quantity).toFixed(2)}</span>
+                <span>{formatVND((item.price * item.quantity))}</span>
               </li>
             ))}
           </ul>
           <div className="flex justify-between mb-2">
             <span>{t("Subtotal")}</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>${formatVND(subtotal)}</span>
           </div>
           <div className="flex justify-between mb-4">
             <span>{t("Shipping")}</span>
-            <span>$0.00</span>
+            <span>{formatVND(0.00)}</span>
           </div>
           <div className="flex justify-between font-bold mb-6">
             <span>{t("Total")}</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>{formatVND(subtotal)}</span>
           </div>
         </div>
       </div>
