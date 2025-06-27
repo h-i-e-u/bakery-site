@@ -100,7 +100,7 @@ bakery-site/
 │   ├── public/          # Static assets
 │   └── package.json
 │
-├── db.json # mockup data used when didn't have backend
+├── db.json # Contains mock data used before the backend was available
 └── README.md # this 
 ```
 
