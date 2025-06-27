@@ -57,13 +57,14 @@ const Product = () => {
             <input
               type="number"
               min="1"
+              max="10"
               value={quantity}
-              onChange={(e) => setQuantity(Number(e.target.value))}
+              onChange={(e) => setQuantity(Math.min(Number(e.target.value), 10))}
               className="input input-bordered w-20"
             />
             <button
               className="btn btn-primary"
-              onClick={() => addToCart({ product, quantity })}
+              onClick={() => addToCart(product, quantity)}
             >
               {t("Add to Cart")}
             </button>
