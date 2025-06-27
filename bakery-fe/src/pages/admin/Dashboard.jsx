@@ -42,7 +42,7 @@ const Dashboard = () => {
             <div className="card-body">
               <h2 className="card-title">Revenue</h2>
               <p className="text-3xl font-bold text-accent">
-                {formatVND(totalRevenue.toLocaleString())}
+                {formatVND(totalRevenue)}
               </p>
             </div>
           </div>
