@@ -4,7 +4,7 @@ import ItemCard from "../../components/common/ItemCard";
 import Slider from "../../components/common/Slider";
 import api from "../../api";
 import { useTranslation } from "react-i18next";
-import { formatVND } from "../../utils"; // Assuming you have a utility function for formatting VND
+import { formatVND } from "../../utils"; 
 
 const Home = () => {
   const navigate = useNavigate();

@@ -38,6 +38,10 @@ const resources = {
         "Order a custom cake for your special occasion. We create beautiful and delicious cakes tailored to your needs.": "Đặt bánh kem tùy chỉnh cho dịp đặc biệt của bạn. Chúng tôi tạo ra những chiếc bánh đẹp và ngon phù hợp với nhu cầu của bạn.",
         "Fresh Bread": "Bánh mì tươi",
         "Enjoy our freshly baked bread, made daily with the finest ingredients.": "Thưởng thức bánh mì tươi được nướng hàng ngày với nguyên liệu tốt nhất.",
+        "About Us": "Về Chúng Tôi",
+        "We're passionate about creating delicious baked goods using traditional recipes and the finest ingredients. Every day, our master bakers craft fresh breads, pastries, and cakes for our community.": "Chúng tôi đam mê tạo ra các món bánh ngon bằng cách sử dụng công thức truyền thống và nguyên liệu tốt nhất. Mỗi ngày, các thợ làm bánh của chúng tôi chế biến bánh mì, bánh ngọt và bánh kem tươi cho cộng đồng của chúng tôi.",
+        "Visit Us": "Thăm Chúng Tôi",
+        "Meet Our Team": "Đội Ngũ Của Chúng Tôi",
         // ...add more translations here
     },
   },
