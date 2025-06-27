@@ -75,6 +75,37 @@ npm start
 
 ---
 
+## Project Structure
+
+```
+bakery-site/
+│
+├── bakery-be/           # Django backend
+│   ├── bakery_backend/  # Django project & apps
+│   │   ├── api/         # API app (models, views, serializers)
+│   │   ├── bakery_backend/ #  setting.py, urls.py,...
+│   │   ├── media/           # Uploaded images
+│   │   ├── data.json        # Sample data for loaddata
+│   │   ├── db.sqlite3   # sqlite database
+│   │   └── manage.py
+│   └── requirements.txt # lib, packet
+│
+├── bakery-fe/           # React frontend
+│   ├── src/
+│   │   ├── components/  # Reusable UI components
+│   │   ├── pages/       # Page components (Home, Shop, Admin, etc.)
+│   │   ├── context/     # React context (e.g., CartContext)
+│   │   ├── utils.js     # Utility functions (e.g., formatVND)
+│   │   └── ...
+│   ├── public/          # Static assets
+│   └── package.json
+│
+├── db.json # mockup data used when didn't have backend
+└── README.md # this 
+```
+
+---
+
 ## License
 
 MIT License
