@@ -71,7 +71,7 @@ npm start
 
 ## Screenshots
 
-> _Add screenshots here to showcase your site!_
+> Comming soon!_
 
 ---
 
@@ -83,7 +83,7 @@ MIT License
 
 ## Credits
 
-- Built with ❤️ by [Your Name]
-- Thanks to OpenAI Copilot for code assistance!
+- Built with ❤️ by Doan Cong Hieu
+- Thanks to OpenAI Copilot for code assistance! (i have no idea *-Hieu*)
 
 
