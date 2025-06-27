@@ -44,3 +44,6 @@ __pycache__
 *.sublime-workspace
 pip-log.txt
 pip-delete-this-directory.txt
+
+# misc
+db.json
