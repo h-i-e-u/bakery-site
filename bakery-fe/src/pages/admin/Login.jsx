@@ -28,12 +28,17 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-base-200">
+    <div className="min-h-screen flex items-center justify-center bg-amber-100">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title font-amaranth text-2xl mb-4">
             Admin Login
           </h2>
+          <div>
+            <p className="text-sm text-gray-500 mb-4">
+              username: <strong>admin</strong>, password: <strong>admin123</strong>
+            </p>
+          </div>
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
