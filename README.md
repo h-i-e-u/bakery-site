@@ -71,8 +71,12 @@ npm start
 
 ## Screenshots
 
-> Comming soon!_
+> Comming soon!
 
+---
+
+## Video
+[Link video demo Bakery Website](https://www.youtube.com/watch?v=NBU-I3VveK4)
 ---
 
 ## Project Structure
